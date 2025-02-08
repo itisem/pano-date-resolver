@@ -48,7 +48,7 @@ export default function DateResolverCore(){
 				utc: utcFormatter.format(x) + " (utc)",
 				user: userFormatter.format(x) + " (your local time)"
 			});
-		}).catch(e => {
+		}).catch(() => {
 			setStatus("error");
 			setError("api error while resolving pano time");
 		});

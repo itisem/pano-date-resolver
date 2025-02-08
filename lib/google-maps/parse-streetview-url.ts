@@ -1,4 +1,4 @@
-import type {Location} from "../geo-map";
+import type {Location} from "../common";
 import parseCoordinateString from "./parse-coordinate-string";
 import getZoomFromFOV from "./get-zoom-from-fov";
 
@@ -12,7 +12,6 @@ const errorCause = {cause: {code: "URLParseError"}};
 
 export default function parseStreetviewUrl(_url: string): Location{
 	const url = new URL(_url);
-	const baseRegex = "(-?[0-9]{1,2}.[0-9]+,-?[0-9]{1,3}.[0-9]+)";
 	let params: URLSearchParams, coordStr: string | undefined;
 	switch(url.pathname){
 		// example url: https://www.google.com/maps?q&layer=c&cbll=32.38139602797509,-64.67713930153232
@@ -94,7 +93,7 @@ export default function parseStreetviewUrl(_url: string): Location{
 				const panoInfo = pbfish.create("StreetviewUrl");
 				panoInfo.fromUrl(panoInfoText);
 				// @ts-ignore
-				const panoId = panoInfo.value.data.pano.panoId.value;
+				const panoId = panoInfo.value.data.pano.panoId;
 				return {lat, lng, zoom, pitch, heading, panoId};
 			}
 			else{

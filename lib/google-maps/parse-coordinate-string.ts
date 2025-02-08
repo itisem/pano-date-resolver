@@ -1,4 +1,4 @@
-import type {Coordinates} from "../geo-map";
+import type {Coordinates} from "../common";
 
 // very rudimentary parser of 1.2345,-6.789 formatted coordinates
 export default function parseCoordinateString(coords: string): Coordinates{

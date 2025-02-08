@@ -1,4 +1,4 @@
-import type {Location} from "../geo-map";
+import type {Location} from "../common";
 
 // TODO: will remove this once i turn my reverse engineering into a single module
 import SingleImageSearch from "./single-image-search.json";

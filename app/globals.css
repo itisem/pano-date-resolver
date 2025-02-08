@@ -81,7 +81,7 @@ main{
 
 /* inputs */
 
-input[type="text"], input[type="password"], input[type="number"]{
+input[type="text"]{
 	background: var(--background-light);
 	border: 1px solid var(--highlight);
 	border-radius: 10px;
@@ -89,15 +89,11 @@ input[type="text"], input[type="password"], input[type="number"]{
 	color: var(--highlight);
 }
 
-input[type="text"]:focus, input[type="password"]:focus, input[type="number"]:focus{
+input[type="text"]:focus{
 	background: var(--background);
 	outline: none;
 	border: 1px solid var(--selection);
 	color: var(--selection);
-}
-
-input[type="number"]{
-	text-align: right;
 }
 
 button{
@@ -114,57 +110,18 @@ button:hover{
 	color: var(--highlight);
 }
 
-select{
-	background: var(--background);
-	border: 1px solid var(--highlight);
-	padding: 2px;
-	border-radius: 10px;
-	cursor: pointer;
-}
-
-option{
-	background: var(--background-light);
-}
-
-/* tooltips */
-
-.tooltip{
-	position: relative;
-	cursor: help;
-	border-bottom: 1px dashed var(--text);
-}
-
-.tooltip:before{
-	content: attr(data-tooltip);
-	position: absolute;
-	top: 100%;
-	left: 50%;
-	transform: translateX(-50%);
-	width: 250px;
-	padding: 5px;
-	border-radius: 10px;
-	background: var(--highlight);
-	color: var(--text-light);
-	text-align: center;
-	display: none;
-}
-
-.tooltip:hover:before{
-	display: block;
-}
-
 /* links */
 
 a{
-	color: var(--selection);
+	color: var(--highlight);
 	text-decoration: none;
-	background: linear-gradient(-90deg, transparent 0%, transparent 50%, var(--selection) 50%, var(--selection) 100%);
+	background: linear-gradient(-90deg, transparent 0%, transparent 50%, var(--highlight) 50%, var(--highlight) 100%);
 	background-size: 400% 100%;
 	background-position: right;
 }
 
 a:hover{
-	color: var(--highlight);
+	color: var(--selection);
 	background-position: 20%;
 }
 
@@ -178,80 +135,4 @@ ul, ol{
 
 p{
 	text-align: justify;
-}
-
-/* errors */
-
-.error{
-	color: var(--error);
-}
-
-/* summary and details */
-
-summary{
-	cursor: pointer;
-	font-weight: bold;
-	padding-top: 1rem;
-	padding-left: 2rem;
-	position: relative;
-	list-style-type: none;
-	transition: 0.2s margin-bottom;
-}
-
-details > summary::-webkit-details-marker{
-	display: none;
-}
-
-summary:before {
-	/* adding a triangle as content is not enough because it's unaffected by transform */
-	content: "";
-	border-top: 0.4rem solid transparent;
-	border-bottom: 0.4rem solid transparent;
-	border-left: 0.4rem solid var(--text);
-	position: absolute;
-	top: 1.3rem;
-	left: 1rem;
-	transform: rotate(0);
-	transition: 0.2s transform;
-}
-
-details[open] > summary:before {
-	transform: rotate(90deg);
-}
-
-details[open] > summary ~ *{
-	animation: 0.2s sweep-in forwards;
-}
-
-/* standalonepage parts */
-
-.settings{
-	width: 100%;
-	border: 1px solid var(--highlight);
-	border-radius: 10px;
-	padding: 0px 2px 3px 2px;
-}
-
-.settings h3{
-	width: 100%;
-	background: var(--background-light);
-	margin: 2px 0px 0px 0px;
-}
-
-.settings h3:first-of-type{
-	margin: 0px;
-	border-radius: 10px 10px 0px 0px;
-}
-
-/* mobile friendly styling */
-
-@media(max-width: 1600px){
-	main{
-		margin-top: 30px;
-		padding: 0px 3px;
-	}
-
-	#hamburger{
-		left: -10px;
-	}
 }

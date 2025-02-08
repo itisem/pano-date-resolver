@@ -4,15 +4,15 @@ export default function PanoDateResolver(){
 	return <>
 		<h1>pano date resolver</h1>
 		<p className = "description">
-			find out when a given pano was taken with an accuracy of up to 10 minutes. (works ~90% of the time in my experience).
+			find out the exact time when a given pano with an accuracy of up to 2 seconds.{" "}
+			<i>new: recent google updates mean that this tool also works with past coverage</i>
 		</p>
 		<p className = "description">
 			<b>note: this tool currently doesn't support shortened (goo.gl) links, paste the full url!</b>
 		</p>
 		<p className = "description">
-			note: this is a placeholder url for the tool, i eventually want to bundle it with a rework of all my other mapping tools.
-			when that happens, i'll turn this url into a redirect.&nbsp;
-			<a href = "https://geo.emily.bz"><u>here is a link</u></a> to all my other streetview tools for the time being.
+			if you want to read the technical details, see <a href = "https://silliest.website:3/blog/google-maps-dates/">my blogpost</a>,{" "}
+			or check out the <a href = "https://github.com/itisem/pano-date-resolver">github page</a>
 		</p>
 		<DateResolverCore />
 	</>

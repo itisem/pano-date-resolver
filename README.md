@@ -1,1 +1,1 @@
-placeholder repo for the date resolver tool until the mapmaking tool rework is complete
+a simple tool to determine the exact time a google maps pano was taken
