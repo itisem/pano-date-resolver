@@ -5,7 +5,9 @@ export default function PanoDateResolver(){
 		<h1>pano date resolver</h1>
 		<p className = "description">
 			find out the exact time when a given pano with an accuracy of up to 2 seconds.{" "}
-			<i>new: recent google updates mean that this tool also works with past coverage</i>
+			this tool <i>mostly</i> just works with the most recent pano,{" "}
+			but recent google updates have also made it possible for it to be used with <i>some</i> older imagery.{" "}
+			as of now, i don&apos;t know what decides when old panos works, so it is best to just try and see, i suppose.
 		</p>
 		<p className = "description">
 			<b>note: this tool currently doesn't support shortened (goo.gl) links, paste the full url!</b>
